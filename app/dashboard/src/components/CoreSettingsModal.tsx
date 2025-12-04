@@ -41,6 +41,7 @@ import { useWebSocket } from "react-use-websocket/dist/lib/use-websocket";
 import { getAuthToken } from "utils/authStorage";
 import { Icon } from "./Icon";
 import { JsonEditor } from "./JsonEditor";
+import { ConfigBuilder } from "./ConfigBuilder";
 import "./JsonEditor/themes.js";
 import { useNodesQuery } from "contexts/NodesContext";
 
@@ -158,8 +159,8 @@ const CoreSettingModalContent: FC = () => {
       const isScrollOnEnd =
         Math.abs(
           (logsDiv.current?.scrollTop || 0) -
-            (logsDiv.current?.scrollHeight || 0) +
-            (logsDiv.current?.offsetHeight || 0)
+          (logsDiv.current?.scrollHeight || 0) +
+          (logsDiv.current?.offsetHeight || 0)
         ) < 10;
       if (logsDiv.current && isScrollOnEnd)
         scrollShouldStayOnEnd.current = true;
@@ -258,7 +259,7 @@ const CoreSettingModalContent: FC = () => {
               control={form.control}
               name="config"
               render={({ field }) => (
-                <JsonEditor json={config} onChange={field.onChange} />
+                <ConfigBuilder config={config} onChange={field.onChange} />
               )}
             />
             <IconButton

@@ -216,6 +216,7 @@ class ProxyInbound(Base):
 
     id = Column(Integer, primary_key=True)
     tag = Column(String(256), unique=True, nullable=False, index=True)
+    sort_index = Column(Integer, nullable=False, default=0, server_default=text("0"))
     hosts = relationship(
         "ProxyHost", back_populates="inbound", cascade="all, delete-orphan"
     )
@@ -257,6 +258,7 @@ class ProxyHost(Base):
 
     inbound_tag = Column(String(256), ForeignKey("inbounds.tag"), nullable=False)
     inbound = relationship("ProxyInbound", back_populates="hosts")
+    sort_index = Column(Integer, nullable=False, default=0, server_default=text("0"))
     allowinsecure = Column(Boolean, nullable=True)
     is_disabled = Column(Boolean, nullable=True, default=False)
     mux_enable = Column(Boolean, nullable=False, default=False, server_default='0')

@@ -159,11 +159,84 @@ def update_hosts(db: Session, inbound_tag: str, modified_hosts: List[ProxyHostMo
             noise_setting=host.noise_setting,
             random_user_agent=host.random_user_agent,
             use_sni_as_host=host.use_sni_as_host,
-        ) for host in modified_hosts
+            sort_index=index,
+        ) for index, host in enumerate(modified_hosts)
     ]
     db.commit()
     db.refresh(inbound)
     return inbound.hosts
+
+
+def get_all_inbounds(db: Session) -> List[ProxyInbound]:
+    """
+    Retrieves all proxy inbounds ordered by sort_index.
+
+    Args:
+        db (Session): Database session.
+
+    Returns:
+        List[ProxyInbound]: List of all proxy inbounds.
+    """
+    return db.query(ProxyInbound).order_by(ProxyInbound.sort_index).all()
+
+
+def get_hosts_ordered(db: Session, inbound_tag: str) -> List[ProxyHost]:
+    """
+    Retrieves hosts for a given inbound tag ordered by sort_index.
+
+    Args:
+        db (Session): Database session.
+        inbound_tag (str): The tag of the inbound.
+
+    Returns:
+        List[ProxyHost]: List of hosts for the inbound ordered by sort_index.
+    """
+    inbound = get_or_create_inbound(db, inbound_tag)
+    return db.query(ProxyHost).filter(
+        ProxyHost.inbound_tag == inbound.tag
+    ).order_by(ProxyHost.sort_index).all()
+
+
+def update_inbound_order(db: Session, inbound_order: List[str]) -> List[ProxyInbound]:
+    """
+    Updates the sort order of inbounds.
+
+    Args:
+        db (Session): Database session.
+        inbound_order (List[str]): List of inbound tags in desired order.
+
+    Returns:
+        List[ProxyInbound]: Updated list of inbounds.
+    """
+    for index, tag in enumerate(inbound_order):
+        inbound = db.query(ProxyInbound).filter(ProxyInbound.tag == tag).first()
+        if inbound:
+            inbound.sort_index = index
+    db.commit()
+    return get_all_inbounds(db)
+
+
+def update_host_order(db: Session, inbound_tag: str, host_ids: List[int]) -> List[ProxyHost]:
+    """
+    Updates the sort order of hosts within an inbound.
+
+    Args:
+        db (Session): Database session.
+        inbound_tag (str): The tag of the inbound.
+        host_ids (List[int]): List of host IDs in desired order.
+
+    Returns:
+        List[ProxyHost]: Updated list of hosts.
+    """
+    for index, host_id in enumerate(host_ids):
+        host = db.query(ProxyHost).filter(
+            ProxyHost.id == host_id,
+            ProxyHost.inbound_tag == inbound_tag
+        ).first()
+        if host:
+            host.sort_index = index
+    db.commit()
+    return get_hosts_ordered(db, inbound_tag)
 
 
 def get_user_queryset(db: Session) -> Query:

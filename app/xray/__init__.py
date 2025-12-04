@@ -40,7 +40,7 @@ def hosts(storage: dict):
     storage.clear()
     with GetDB() as db:
         for inbound_tag in config.inbounds_by_tag:
-            inbound_hosts: Sequence[ProxyHost] = crud.get_hosts(db, inbound_tag)
+            inbound_hosts: Sequence[ProxyHost] = crud.get_hosts_ordered(db, inbound_tag)
 
             storage[inbound_tag] = [
                 {

@@ -75,8 +75,8 @@ def get_inbounds(admin: Admin = Depends(Admin.get_current)):
 def get_hosts(
     db: Session = Depends(get_db), admin: Admin = Depends(Admin.check_sudo_admin)
 ):
-    """Get a list of proxy hosts grouped by inbound tag."""
-    hosts = {tag: crud.get_hosts(db, tag) for tag in xray.config.inbounds_by_tag}
+    """Get a list of proxy hosts grouped by inbound tag, ordered by sort_index."""
+    hosts = {tag: crud.get_hosts_ordered(db, tag) for tag in xray.config.inbounds_by_tag}
     return hosts
 
 
