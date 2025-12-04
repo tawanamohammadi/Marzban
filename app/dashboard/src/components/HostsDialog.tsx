@@ -227,6 +227,9 @@ const AccordionInbound: FC<AccordionInboundType> = ({
     }
   }, [accordionErrors]);
 
+  const [dragIndex, setDragIndex] = useState<number | null>(null);
+  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
+
   const moveHostPosition = (index: number, direction: "up" | "down") => {
     if (direction === "up" && index > 0) {
       moveHost(index, index - 1);
@@ -276,6 +279,19 @@ const AccordionInbound: FC<AccordionInboundType> = ({
                 whileDrag={{ scale: 1.05, zIndex: 10 }}
                 style={{
                   width: "100%",
+                }}
+                draggable
+                onDragStart={() => setDragIndex(index)}
+                onDragOver={(e) => {
+                  e.preventDefault();
+                  setDragOverIndex(index);
+                }}
+                onDrop={() => {
+                  if (dragIndex !== null && dragIndex !== index) {
+                    moveHost(dragIndex, index);
+                  }
+                  setDragIndex(null);
+                  setDragOverIndex(null);
                 }}
               >
                 <VStack
