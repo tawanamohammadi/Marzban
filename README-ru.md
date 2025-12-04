@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/gozargah/marzban" target="_blank" rel="noopener noreferrer">
+  <a href="https://github.com/tawanamohammadi/Marzban" target="_blank" rel="noopener noreferrer">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/logo-dark.png">
       <img width="160" height="160" src="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/logo-light.png">
@@ -54,7 +54,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/gozargah/marzban" target="_blank" rel="noopener noreferrer" >
+  <a href="https://github.com/tawanamohammadi/Marzban" target="_blank" rel="noopener noreferrer" >
     <img src="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/preview.png" alt="Marzban screenshots" width="600" height="auto">
   </a>
 </p>
@@ -111,18 +111,18 @@ Marzban удобен в использовании, многофункциона
 Установка Marzban с базой данных SQLite (по умолчанию):
 
 ```bash
-sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)" @ install
+sudo bash -c "$(curl -sL https://github.com/tawanamohammadi/Marzban-scripts/raw/master/marzban.sh)" @ install
 ```
 
 Установка Marzban с базой данных MySQL:
 
 ```bash
-sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)" @ install --database mysql
+sudo bash -c "$(curl -sL https://github.com/tawanamohammadi/Marzban-scripts/raw/master/marzban.sh)" @ install --database mysql
 ```
 
 Установка Marzban с базой данных MariaDB:
 ```bash
-sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)" @ install --database mariadb
+sudo bash -c "$(curl -sL https://github.com/tawanamohammadi/Marzban-scripts/raw/master/marzban.sh)" @ install --database mariadb
 ```
 
 Когда установка будет завершена:
@@ -172,7 +172,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 Клонируйте этот проект и установите зависимости (Вам нужен Python >= 3.8):
 
 ```bash
-git clone https://github.com/Gozargah/Marzban.git
+git clone https://github.com/tawanamohammadi/Marzban.git
 cd Marzban
 wget -qO- https://bootstrap.pypa.io/get-pip.py | python3 -
 python3 -m pip install -r requirements.txt
