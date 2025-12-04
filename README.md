@@ -7,57 +7,69 @@
   </a>
 </p>
 
-<h1 align="center"/>Marzban</h1>
+<h1 align="center">Marzban</h1>
 
 <p align="center">
-    Unified GUI Censorship Resistant Solution Powered by <a href="https://github.com/XTLS/Xray-core">Xray</a>
+  Unified GUI Censorship Resistant Solution Powered by
+  <a href="https://github.com/XTLS/Xray-core" target="_blank" rel="noopener noreferrer">Xray</a>
+</p>
+
+<p align="center">
+  <strong>Fork notice:</strong>
+  This repository is a fork of
+  <a href="https://github.com/Gozargah/Marzban" target="_blank" rel="noopener noreferrer">Gozargah/Marzban</a>
+  and is maintained with additional updates by
+  <a href="https://github.com/tawanamohammadi" target="_blank" rel="noopener noreferrer">Tawana Mohammadi</a>.
+</p>
+
+<p align="center">
+  <strong>اطلاع فورک:</strong>
+  این مخزن فورکی از
+  <a href="https://github.com/Gozargah/Marzban" target="_blank" rel="noopener noreferrer">Gozargah/Marzban</a>
+  است و با به‌روزرسانی‌ها و نگه‌داری اضافی توسط
+  <a href="https://github.com/tawanamohammadi" target="_blank" rel="noopener noreferrer">توانا محمدی</a>
+  منتشر می‌شود.
 </p>
 
 <br/>
+
 <p align="center">
-    <a href="#">
-        <img src="https://img.shields.io/github/actions/workflow/status/gozargah/marzban/build.yml?style=flat-square" />
-    </a>
-    <a href="https://hub.docker.com/r/gozargah/marzban" target="_blank">
-        <img src="https://img.shields.io/docker/pulls/gozargah/marzban?style=flat-square&logo=docker" />
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/github/license/gozargah/marzban?style=flat-square" />
-    </a>
-    <a href="https://t.me/gozargah_marzban" target="_blank">
-        <img src="https://img.shields.io/badge/telegram-group-blue?style=flat-square&logo=telegram" />
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/badge/twitter-commiunity-blue?style=flat-square&logo=twitter" />
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/github/stars/gozargah/marzban?style=social" />
-    </a>
+  <a href="#">
+    <img src="https://img.shields.io/github/actions/workflow/status/gozargah/marzban/build.yml?style=flat-square" />
+  </a>
+  <a href="https://hub.docker.com/r/gozargah/marzban" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/docker/pulls/gozargah/marzban?style=flat-square&logo=docker" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/github/license/gozargah/marzban?style=flat-square" />
+  </a>
+  <a href="https://t.me/gozargah_marzban" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/telegram-group-blue?style=flat-square&logo=telegram" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/twitter-commiunity-blue?style=flat-square&logo=twitter" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/github/stars/gozargah/marzban?style=social" />
+  </a>
 </p>
 
 <p align="center">
- <a href="./README.md">
- English
- </a>
- /
- <a href="./README-fa.md">
- فارسی
- </a>
+  <a href="./README.md">English</a>
   /
-  <a href="./README-zh-cn.md">
- 简体中文
- </a>
-   /
-  <a href="./README-ru.md">
- Русский
- </a>
+  <a href="./README-fa.md">فارسی</a>
+  /
+  <a href="./README-zh-cn.md">简体中文</a>
+  /
+  <a href="./README-ru.md">Русский</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/tawanamohammadi/Marzban" target="_blank" rel="noopener noreferrer" >
+  <a href="https://github.com/tawanamohammadi/Marzban" target="_blank" rel="noopener noreferrer">
     <img src="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/preview.png" alt="Marzban screenshots" width="600" height="auto">
   </a>
 </p>
+
 
 ## Table of Contents
 
