@@ -33,6 +33,11 @@
 
 <br/>
 
+> **Refactor in progress (Dec 2025)**  
+> UI/UX enhancements and ordering + visual config builder are implemented.  
+> Details: `changelogs/2025-12-05-marzban-uiux-enhancement.md`
+
+
 <p align="center">
   <a href="#">
     <img src="https://img.shields.io/github/actions/workflow/status/gozargah/marzban/build.yml?style=flat-square" />
