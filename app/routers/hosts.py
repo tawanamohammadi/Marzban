@@ -1,7 +1,7 @@
 """
 Router for host and inbound ordering operations.
 """
-from typing import Dict, List
+from typing import List
 
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
@@ -91,17 +91,4 @@ def update_hosts_order(
     """Update the order of hosts within an inbound."""
     result = crud.update_host_order(db, inbound_tag, payload.host_ids)
     xray.hosts.update()
-    return result
-
-
-@router.get("/hosts", response_model=Dict[str, List[HostResponse]])
-def get_all_hosts_ordered(
-    db: Session = Depends(get_db),
-    _: Admin = Depends(Admin.check_sudo_admin),
-):
-    """Get all hosts grouped by inbound and ordered by sort_index."""
-    inbounds = crud.get_all_inbounds(db)
-    result = {}
-    for inbound in inbounds:
-        result[inbound.tag] = crud.get_hosts_ordered(db, inbound.tag)
     return result
