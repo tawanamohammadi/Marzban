@@ -50,7 +50,7 @@ class HostResponse(BaseModel):
         from_attributes = True
 
 
-@router.get("/inbounds", response_model=List[InboundResponse])
+@router.get("/inbounds/ordered", response_model=List[InboundResponse])
 def get_inbounds(
     db: Session = Depends(get_db),
     _: Admin = Depends(Admin.check_sudo_admin),
