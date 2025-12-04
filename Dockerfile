@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /code
 
-ARG XRAY_INSTALL_SCRIPT_URL=https://github.com/Gozargah/Marzban-scripts/raw/master/install_latest_xray.sh
+ARG XRAY_INSTALL_SCRIPT_URL=https://github.com/tawanamohammadi/Marzban-scripts/raw/master/install_latest_xray.sh
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential curl unzip gcc python3-dev libpq-dev \
     && curl -L ${XRAY_INSTALL_SCRIPT_URL} | bash \
