@@ -64,11 +64,11 @@ function generatePageItems(total: number, current: number, width: number) {
     items[i] = i + left;
   }
   // replace non-ending items with placeholders
-  if (items[0] > 0) {
+  if ((items[0] as number) > 0) {
     items[0] = 0;
     items[1] = "prev-more";
   }
-  if (items[items.length - 1] < total - 1) {
+  if ((items[items.length - 1] as number) < total - 1) {
     items[items.length - 1] = total - 1;
     items[items.length - 2] = "next-more";
   }
