@@ -33,7 +33,7 @@
 
 <br/>
 
-> **Refactor in progress (Dec 2025)**  
+> **Refactor in progress (Dec 2025)** 
 > UI/UX enhancements and ordering + visual config builder are implemented.  
 > Details: `changelogs/2025-12-05-marzban-uiux-enhancement.md`
 
